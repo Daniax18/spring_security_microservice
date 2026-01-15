@@ -1,6 +1,15 @@
 version: '3.9'
 
 services:
+# Gateway service
+  gateway-service:
+    build: ./api-gateway
+    container_name: gateway-service
+    ports:
+      - "8080:8080"
+    networks:
+      - moustass-network
+
 # Auth Service
   auth-db:
     image: mysql:8
